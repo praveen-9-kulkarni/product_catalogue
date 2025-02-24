@@ -1,5 +1,6 @@
 package com.learn.product_catalogue.product_catalogue.controller;
 
+import java.net.URI;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
@@ -26,8 +27,9 @@ public class ProductController {
     }
     
     @GetMapping
-    public List<Product> getAllProducts() {
-        return productService.getAllProducts();
+    public ResponseEntity<List<Product>> getAllProducts() {
+        List<Product> products = productService.getAllProducts();
+        return ResponseEntity.ok(products);
     }
 
     @GetMapping("/{id}")
@@ -38,8 +40,10 @@ public class ProductController {
     }
 
     @PostMapping
-    public Product createProduct(@RequestBody Product product) {
-        return productService.saveProduct(product);
+    public ResponseEntity<Product> createProduct(@RequestBody Product product) {
+        Product savedProduct =productService.saveProduct(product);
+        return ResponseEntity.created(URI.create("/api/products/" + savedProduct.getId()))
+                             .body(savedProduct);
     }
 
     @PutMapping("/{id}")
