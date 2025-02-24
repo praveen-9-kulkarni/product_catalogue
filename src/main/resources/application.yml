@@ -10,4 +10,17 @@ spring:
     database-platform: org.hibernate.dialect.H2Dialect
   h2:
     console:
-      enabled: true 
+      enabled: true
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n"
+  file:
+    name: logs/product_catalogue.log
+    max-size: 2MB
+    max-history: 5
+  level:
+    root: INFO
+    com.learn.product_catalogue: DEBUG
+    org.springframework.web: DEBUG
+    org.hibernate: ERROR      
