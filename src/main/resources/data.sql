@@ -1,4 +1,4 @@
-INSERT INTO product (name, description, price, category, image_url) VALUES
+INSERT INTO products (name, description, price, category, image_url) VALUES
 ('iPhone 13', 'Latest Apple smartphone with A15 Bionic chip', 999.99, 'Electronics', 'https://example.com/iphone13.jpg'),
 ('Samsung 4K TV', '55-inch Smart LED TV with HDR', 699.99, 'Electronics', 'https://example.com/samsung-tv.jpg'),
 ('Nike Air Max', 'Comfortable running shoes with air cushioning', 129.99, 'Footwear', 'https://example.com/nike-airmax.jpg'),
